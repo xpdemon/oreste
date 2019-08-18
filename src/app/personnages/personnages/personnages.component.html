@@ -1,0 +1,7 @@
+<div class='container'>
+  <div class='row'>
+    <div *ngFor="let personnageSource of personnageSources" class='col' style="margin-top:20px">
+      <app-personnage-details [personnage]='personnageSource._source'></app-personnage-details>
+    </div>
+  </div>
+</div>

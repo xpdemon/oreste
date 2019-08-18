@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900");
+@import url("https://cdn.linearicons.com/free/1.0.0/icon-font.min.css");
+
+
+.weather-card {
+  margin: 60px auto;
+  height: 740px;
+  width: 450px;
+  box-shadow: 0 1px 38px rgba(0, 0, 0, 0.60), 0 5px 12px rgba(0, 0, 0, 0.60);
+  overflow: hidden;
+}
+
+//.weather-card.one {
+ // background: black;
+//}
+
+//.weather-card.rain {
+ // background: black;
+//}
+
+.weather-card .top {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background: url(https://i.pinimg.com/originals/1a/49/d6/1a49d6d5d2ce693c5af5e6f875823d4a.jpg) no-repeat;
+  text-align: center;
+}
+
+.weather-card.pj .top {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background: url(https://lecturesmmdoriane.files.wordpress.com/2018/04/fantasy_world.jpg?w=1024) no-repeat;
+  text-align: center;
+}
+
+
+
+.weather-card .top .wrapper .temp .temp-value {
+  display: inline-block;
+  font-size: 85px;
+  font-weight: 600;
+  color: #fff;
+}
+
+
+.weather-card.pj .top {
+  background-size: cover;
+  background-position: center center;
+}
+
+.weather-card .top {
+  background-size: cover;
+  background-position: center center;
+}
+
+.btn{
+ display: block;
+ margin: auto;
+}
+
+.weather-card:hover{
+
+  transform: scale(1.1, 1.1);
+}

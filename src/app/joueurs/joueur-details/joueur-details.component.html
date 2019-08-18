@@ -1,0 +1,11 @@
+
+  <a *ngIf="joueur" [routerLink]="['/joueur',joueur.pseudo]" routerLinkActive="router-link-active " (click)="storePseudo(joueur)" >
+    <div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-text">{{joueur.pseudo}}</p>
+            </div>
+          </div>
+    </div>
+  </a>
+  <router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+
+   <a *ngIf="game" [routerLink]="['/personnages']" routerLinkActive="router-link-active" (click)="storeCurrentGame(game)">
+      <div>
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src={{game.image}}>
+              <div class="card-body">
+                <p class="card-text">{{game.nom}}</p>
+              </div>
+            </div>
+      </div>
+    </a>
+

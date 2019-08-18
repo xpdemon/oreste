@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+
+      <div class="col">
+        <a [routerLink]="['/games']" routerLinkActive="router-link-active" (click)="storeRole('mj')" >
+        <div class="weather-card rain">
+          <div class="top">
+            <div class="wrapper">
+              <p class="temp">
+                <span class="temp-value">MJ</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+
+      <div class="col">
+        <a [routerLink]="['/joueurs']" routerLinkActive="router-link-active" (click)="storeRole('pj')">
+        <div class="weather-card pj">
+          <div class="top">
+            <div class="wrapper">
+              <p class="temp">
+                <span class="temp-value">PJ</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
