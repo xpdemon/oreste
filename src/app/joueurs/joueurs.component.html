@@ -12,7 +12,7 @@
 <div class='container' style="margin-top:20px">
   <div class='row'>
     <div *ngFor="let joueurSource of joueurSources" class='col' style="margin-top:20px">
-      <app-joueur-details [joueur]='joueurSource._source'></app-joueur-details>
+      <app-joueur-details [joueur]='joueurSource._source' [id]='joueurSource._id'></app-joueur-details>
     </div>
   </div>
 </div>

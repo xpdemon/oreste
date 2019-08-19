@@ -1,12 +1,17 @@
-
-   <a *ngIf="game" [routerLink]="['/personnages']" routerLinkActive="router-link-active" (click)="storeCurrentGame(game)">
-      <div>
-          <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src={{game.image}}>
-              <div class="card-body">
-                <p class="card-text">{{game.nom}}</p>
-              </div>
-            </div>
+<div *ngIf="game">
+  <div>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src={{game.image}} [routerLink]="['/personnages']" routerLinkActive="router-link-active" (click)="storeCurrentGame(game)">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-text">{{game.nom}}</h5>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-outline-danger" (click)="deleteGame(game)">Supprimer</button>
+          </div>
+        </div>
       </div>
-    </a>
-
+    </div>
+  </div>
+</div>

@@ -16,7 +16,7 @@
   </form>
   <div class='row'>
     <div *ngFor="let gameSource of gamesSources" class='col' style="margin-top:20px">
-      <app-game-detail [game]='gameSource._source'></app-game-detail>
+      <app-game-detail [game]='gameSource._source' [gameId]='gameSource._id'></app-game-detail>
     </div>
   </div>
 </div>

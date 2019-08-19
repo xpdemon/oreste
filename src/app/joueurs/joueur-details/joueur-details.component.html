@@ -1,11 +1,20 @@
+<div *ngIf="joueur">
+  <div>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <h5 class="card-text"  [routerLink]="['/joueur',joueur.pseudo]" routerLinkActive="router-link-active "  (click)="storePseudo(joueur)">{{joueur.pseudo}}</h5>
+            </div>
 
-  <a *ngIf="joueur" [routerLink]="['/joueur',joueur.pseudo]" routerLinkActive="router-link-active " (click)="storePseudo(joueur)" >
-    <div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <p class="card-text">{{joueur.pseudo}}</p>
+            <div class="col">
+              <button type="button" class="btn btn-outline-danger" (click)="deleteJoueur(joueur)">Supprimer</button>
             </div>
           </div>
+        </div>
+      </div>
     </div>
-  </a>
-  <router-outlet></router-outlet>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,4 +1,5 @@
 export interface Joueur {
+  id: string;
   pseudo: string;
 }
 

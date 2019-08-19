@@ -11,13 +11,26 @@ import { ElasticService } from 'src/app/shared/elastic.service';
 export class JoueurDetailsComponent implements OnInit {
 
   @Input() joueur: Joueur;
-  @Input() games: Game[];
+  @Input() id: string;
   constructor(private es: ElasticService) { }
 
   ngOnInit() {
+    this.joueur.id = this.id;
   }
 
   storePseudo(joueur: Joueur){
     localStorage.setItem('current_player', joueur.pseudo);
+  }
+
+  deleteJoueur(joueur: Joueur){
+    this.es.deleteDoc({
+      index: 'joueurs',
+      id: joueur.id,
+    }).then((result) => {
+      console.log(result);
+      window.location.reload();
+    }, error => {
+      console.error(error);
+    });
   }
 }

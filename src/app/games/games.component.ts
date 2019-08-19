@@ -42,19 +42,22 @@ export class GamesComponent implements OnInit {
 
 
   onSubmit(value) {
-    this.es.createDoc({
-      index: 'games',
-      id: value.nom,
-      body: {
-        nom: value.nom,
-        image: value.image
-      }
-    }).then((result) => {
-      console.log(result);
-      window.location.reload();
-    }, error => {
-      console.error(error);
-    });
-  }
+    if (value.nom == '' || value.image == '') {
+    } else {
+      this.es.createDoc({
+        index: 'games',
+        id: value.nom,
+        body: {
+          nom: value.nom,
+          image: value.image
+        }
+      }).then((result) => {
+        console.log(result);
+        window.location.reload();
+      }, error => {
+        console.error(error);
+      });
 
+    }
+  }
 }

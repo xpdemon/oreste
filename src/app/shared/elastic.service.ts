@@ -51,7 +51,7 @@ export class ElasticService {
     return this.client.search({
       index: _index,
       body: this.queryalldocs,
-      filterPath: ['hits.hits._source']
+      filterPath: ['hits.hits']
     });
   }
 
@@ -72,6 +72,10 @@ export class ElasticService {
 
   createDoc(value):any{
     return this.client.create(value);
+  }
+
+  deleteDoc(value):any{
+    return this.client.delete(value);
   }
 
 }
