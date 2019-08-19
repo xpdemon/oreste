@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesService } from '../games.service';
-import { Game, GameSource } from '../models/game';
+import { GameSource } from '../models/game';
 import { ElasticService } from '../shared/elastic.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+
+
 
 
 @Component({
@@ -11,11 +14,19 @@ import { ElasticService } from '../shared/elastic.service';
 })
 export class GamesComponent implements OnInit {
   gamesSources: GameSource[];
+  form: FormGroup;
 
-  constructor(private es: ElasticService) { }
+
+  constructor(private es: ElasticService) {
+
+    this.form = new FormGroup({
+      nom: new FormControl('', Validators.required),
+      image: new FormControl('', Validators.required),
+    });
+  }
 
   ngOnInit() {
-   this.getAllGames();
+    this.getAllGames();
 
   }
 
@@ -26,9 +37,24 @@ export class GamesComponent implements OnInit {
     }, error => {
       console.error(error);
     });
-    }
+  }
 
 
 
+  onSubmit(value) {
+    this.es.createDoc({
+      index: 'games',
+      id: value.nom,
+      body: {
+        nom: value.nom,
+        image: value.image
+      }
+    }).then((result) => {
+      console.log(result);
+      window.location.reload();
+    }, error => {
+      console.error(error);
+    });
+  }
 
 }

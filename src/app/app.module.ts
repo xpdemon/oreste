@@ -15,6 +15,7 @@ import { JoueurDetailsComponent } from './joueurs/joueur-details/joueur-details.
 import { PersonnagesComponent } from './personnages/personnages/personnages.component';
 import { PersonnageDetailsComponent } from './personnages/personnage-details/personnage-details.component';
 import { SidebarModule } from 'ng-sidebar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -34,7 +35,9 @@ import { SidebarModule } from 'ng-sidebar';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    SidebarModule
+    SidebarModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     GamesService,

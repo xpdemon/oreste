@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Client } from 'elasticsearch-browser';
+import { Client } from 'elasticsearch';
 import { environment } from '../../environments/environment';
 
 
@@ -68,6 +68,10 @@ export class ElasticService {
         }
       }
     });
+  }
+
+  createDoc(value):any{
+    return this.client.create(value);
   }
 
 }
