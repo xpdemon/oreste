@@ -1,10 +1,21 @@
-
+<div class='container'>
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Pseudo" formControlName="pseudo">
+    </div>
+    <div class="col">
+<button type="submit" class="btn btn-primary">Ajouter un Joueur</button>
+</div>
+  </div>
+</form>
 <div class='container' style="margin-top:20px">
   <div class='row'>
     <div *ngFor="let joueurSource of joueurSources" class='col' style="margin-top:20px">
       <app-joueur-details [joueur]='joueurSource._source'></app-joueur-details>
     </div>
   </div>
+</div>
 </div>
 
 
