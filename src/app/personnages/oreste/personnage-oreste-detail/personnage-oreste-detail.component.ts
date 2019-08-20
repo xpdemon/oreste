@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PersonnageOreste } from '../personnage-oreste/personnage-oreste.interface';
 
 @Component({
   selector: 'app-personnage-oreste-detail',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personnage-oreste-detail.component.scss']
 })
 export class PersonnageOresteDetailComponent implements OnInit {
+
 
   constructor() { }
 

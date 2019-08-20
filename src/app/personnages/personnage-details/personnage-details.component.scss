@@ -1,3 +1,13 @@
 .card:hover {
-  transform: scale(1.1, 1.1);
+  transform: scale(1.05, 1.05);
+  border-color: rgba(8, 8, 7, 0.815);
+  cursor: pointer;
 }
+
+img.card-img-top
+{
+  width: auto;
+  height: 300px;
+
+}
+

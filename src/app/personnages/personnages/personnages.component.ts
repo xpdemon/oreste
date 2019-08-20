@@ -12,7 +12,7 @@ export class PersonnagesComponent implements OnInit {
 
   constructor(private es: ElasticService) { }
 
-  private currentGame = localStorage.getItem('current_Game').toLocaleLowerCase();
+   currentGame = localStorage.getItem('current_Game').toLocaleLowerCase();
 
   private currentPlayer: string;
 

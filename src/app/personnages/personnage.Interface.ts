@@ -5,6 +5,7 @@ export interface Personnage {
   nom: string;
   prenom: string;
   id: string;
+
 }
 
 export interface PersonnageSouce{
