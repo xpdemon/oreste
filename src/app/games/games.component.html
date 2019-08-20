@@ -1,25 +1,39 @@
-
-
 <div class='container'>
-  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-    <div class="row">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Nom du jeu" formControlName="nom">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Ajouter un jeu
+      </button>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="form">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Nom du jeu" formControlName="nom">
+              </div>
+              <div class="col">
+                <input type="text" class="form-control" placeholder="URL de l'image" formControlName="image">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary"(click)="onSubmit(form.value) ">Créer un jeu</button>
+        </div>
       </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="URL de l'image" formControlName="image">
-      </div>
-      <div class="col">
-  <button type="submit" class="btn btn-primary">Créer un jeu</button>
-</div>
     </div>
-  </form>
+  </div>
   <div class='row'>
     <div *ngFor="let gameSource of gamesSources" class='col' style="margin-top:20px">
       <app-game-detail [game]='gameSource._source' [gameId]='gameSource._id'></app-game-detail>
     </div>
   </div>
 </div>
-
-
-

@@ -16,6 +16,9 @@ import { PersonnagesComponent } from './personnages/personnages/personnages.comp
 import { PersonnageDetailsComponent } from './personnages/personnage-details/personnage-details.component';
 import { SidebarModule } from 'ng-sidebar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PersonnageOresteComponent } from './personnages/oreste/personnage-oreste/personnage-oreste.component';
+import { PersonnageOresteDetailComponent } from './personnages/oreste/personnage-oreste-detail/personnage-oreste-detail.component';
+import { CreationPersoOresteComponent } from './personnages/oreste/creation-perso-oreste/creation-perso-oreste.component';
 
 
 
@@ -29,7 +32,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GameDetailComponent,
     JoueurDetailsComponent,
     PersonnagesComponent,
-    PersonnageDetailsComponent
+    PersonnageDetailsComponent,
+    PersonnageOresteComponent,
+    PersonnageOresteDetailComponent,
+    CreationPersoOresteComponent
   ],
   imports: [
     HttpClientModule,

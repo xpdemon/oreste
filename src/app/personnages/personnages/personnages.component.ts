@@ -23,7 +23,7 @@ export class PersonnagesComponent implements OnInit {
   personnageSources: PersonnageSouce[];
 
   ngOnInit() {
-    if(localStorage.getItem('role') === 'pj') {
+    if (localStorage.getItem('role') === 'pj') {
       this.currentPlayer = localStorage.getItem('current_player').toLocaleLowerCase();
       this.getPersonnageByGamesAndPalayers();
     } else {

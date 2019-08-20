@@ -9,9 +9,11 @@ import { Personnage } from '../personnage.Interface';
 export class PersonnageDetailsComponent implements OnInit {
 
  @Input() personnage: Personnage;
-  constructor() { }
+ @Input() idPersonnage: string;
+  constructor() {  }
 
   ngOnInit() {
+    this.personnage.id = this.idPersonnage;
   }
 
 }

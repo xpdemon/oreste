@@ -42,7 +42,7 @@ export class GamesComponent implements OnInit {
 
 
   onSubmit(value) {
-    if (value.nom == '' || value.image == '') {
+    if (value.nom === '' || value.image === '') {
     } else {
       this.es.createDoc({
         index: 'games',
