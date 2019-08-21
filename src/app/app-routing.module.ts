@@ -6,6 +6,7 @@ import { WelcomComponent } from './welcom/welcom.component';
 import { JoueursComponent } from './joueurs/joueurs.component';
 import { TestEsComponent } from './test-es/test-es.component';
 import { PersonnagesComponent } from './personnages/personnages/personnages.component';
+import { CreationPersoOresteComponent } from './personnages/oreste/creation-perso-oreste/creation-perso-oreste.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'joueurs', component: JoueursComponent},
   {path: 'joueur/:pseudo', component: GamesComponent},
   {path: 'personnages', component: PersonnagesComponent},
-  {path: 'testEs', component: TestEsComponent}
+  {path: 'testCreation', component: CreationPersoOresteComponent}
+
 ];
 
 @NgModule({

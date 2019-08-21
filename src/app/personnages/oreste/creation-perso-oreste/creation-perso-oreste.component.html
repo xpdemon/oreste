@@ -1,42 +1,85 @@
-
-
 <div class="container">
     <div class="card">
         <div class="card-body">
-            <div class="row">
-                <div class="col text-center">intell</div>
-                <div class="col text-center">Esprit</div>
-                <div class="col text-center">Corps</div>
-            </div>
+            <form [formGroup]="creationForm">
+                <div class="row">
+                  <div class="col text-center">Nom</div>
+                  <div class="col text-center">Prenom</div>
+                  <div class="col text-center">Age</div>
+                  <div class="col text-center">Sexe</div>
+                  <div class="col text-center">Taille</div>
+                  <div class="col text-center">Classe de combat</div>
+                  <div class="col text-center">Grade</div>
+                  <div class="w-100"></div>
+                  <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso" id="inputEmail3" formControlName="Nom"></div>
+                  <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso" id="inputEmail3" formControlName="Prenom"></div>
+                  <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso" id="inputEmail3" formControlName="Age"></div>
+                  <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso" id="inputEmail3" formControlName="Sexe"></div>
+                  <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso" id="inputEmail3" formControlName="Taille"></div>
+                  <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso" id="inputEmail3" formControlName="Classe de combat"></div>
+                  <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso" id="inputEmail3" formControlName="Grade"></div>
+                </div>
+                </form>
         </div>
       </div>
-
-    <div class="row">
-      <div class="col">
-        1 of 4
+  <div class="card">
+    <div class="card-body">
+        <form [formGroup]="creationForm">
+      <div class="row">
+        <div class="col text-center">intelligence</div>
+        <div class="col text-center">Esprit</div>
+        <div class="col text-center">Corps</div>
+        <div class="w-100"></div>
+        <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3" formControlName="intelligence" style="max-width: 57.08px"></div>
+        <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3" formControlName="Esprit" style="max-width: 57.08px"></div>
+        <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3" formControlName="Corps" style="max-width: 57.08px"></div>
       </div>
-      <div class="col">
-          2 of 4
-        </div>
-      <div class="col-6">
-          <img src="../../../../assets/imagePerso1.jpg">
-      </div>
-      <div class="col">
-        3/4
-      </div>
-      <div class="col">
-          4/4
-        </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        1 of 3
-      </div>
-      <div class="col-5">
-        2 of 3 (wider)
-      </div>
-      <div class="col">
-        3 of 3
-      </div>
+      </form>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+            <div class="container">
+              <form [formGroup]="creationForm">
+                <div class="row">
+                      <div class="col">
+                          <label class="col-form-label-sm">Physique et mathematiques</label>
+                      </div>
+                      <div class="col-">
+                          <input type="number" class="form-control" id="inputEmail3" formControlName="nom" style="max-width: 57.08px">
+                      </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                      <label class="col-form-label-sm">truc</label>
+                  </div>
+                  <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="nom" style="max-width: 57.08px">
+                  </div>
+                </div>
+              </form>
+              </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <img src="../../../../assets/imagePerso1.jpg">
+    </div>
+
+    <div class="col">
+      4/4
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col-5">
+      2 of 3 (wider)
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div>
