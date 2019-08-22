@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PersonnagesComponent implements OnInit {
 
+
   constructor(private es: ElasticService) { }
 
    currentGame = localStorage.getItem('current_Game').toLocaleLowerCase();

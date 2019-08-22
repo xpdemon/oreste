@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { PersonnageOreste } from '../personnage-oreste/personnage-oreste.interface';
+
 
 
 
@@ -10,10 +12,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class CreationPersoOresteComponent implements OnInit {
 
+  @Output() persoToCreate =  new EventEmitter<PersonnageOreste>();
+
   creationForm: FormGroup;
   constructor() {
     this.creationForm = new FormGroup({
       nom: new FormControl('', Validators.required),
+      image: new FormControl('', Validators.required),
       prenom: new FormControl('', Validators.required),
       age: new FormControl('', Validators.required),
       sexe: new FormControl('', Validators.required),
