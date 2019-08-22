@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-creation-perso-oreste',
   templateUrl: './creation-perso-oreste.component.html',
@@ -31,6 +33,18 @@ export class CreationPersoOresteComponent implements OnInit {
       cultureFallen: new FormControl('', Validators.required),
       cultureKrhone: new FormControl('', Validators.required),
       cultureSolarienne: new FormControl('', Validators.required),
+      astronavigation: new FormControl('', Validators.required),
+      genieHighTech: new FormControl('', Validators.required),
+      pilotage: new FormControl('', Validators.required),
+      technologieElfhaym: new FormControl('', Validators.required),
+      technologieKrhone: new FormControl('', Validators.required),
+      discrétion : new FormControl('', Validators.required),
+      medecineEtBiologie : new FormControl('', Validators.required),
+      systemesDeSecurité : new FormControl('', Validators.required),
+      technologieFallen : new FormControl('', Validators.required),
+      TechnologieSolarienne : new FormControl('', Validators.required),
+
+
     });
   }
 

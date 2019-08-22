@@ -22,6 +22,7 @@ import { CreationPersoOresteComponent } from './personnages/oreste/creation-pers
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,9 @@ import { CreationPersoOresteComponent } from './personnages/oreste/creation-pers
     AppRoutingModule,
     SidebarModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
   ],
   providers: [
     GamesService,

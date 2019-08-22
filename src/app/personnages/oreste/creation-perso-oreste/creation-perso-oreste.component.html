@@ -1,313 +1,341 @@
 <div class="container">
-  <div class="card">
-    <div class="card-body">
-      <form [formGroup]="creationForm">
-        <div class="row">
-          <div class="col text-center">Nom</div>
-          <div class="col text-center">Prenom</div>
-          <div class="col text-center">Age</div>
-          <div class="col text-center">Sexe</div>
-          <div class="col text-center">Taille</div>
-          <div class="col text-center">Classe de combat</div>
-          <div class="col text-center">Grade</div>
-          <div class="w-100"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
-              id="inputEmail3" formControlName="nom"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
-              id="inputEmail3" formControlName="prenom"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
-              id="inputEmail3" formControlName="age"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
-              id="inputEmail3" formControlName="sexe"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
-              id="inputEmail3" formControlName="taille"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
-              id="inputEmail3" formControlName="classe_de_combat"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
-              id="inputEmail3" formControlName="grade"></div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-offset-4 col-md-2 ">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#feuil1" aria-expanded="false" aria-controls="collapseExample">
+                perso 1
+              </button>
         </div>
-      </form>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-body">
-      <form [formGroup]="creationForm">
-        <div class="row">
-          <div class="col text-center">intelligence</div>
-          <div class="col text-center">Esprit</div>
-          <div class="col text-center">Corps</div>
-          <div class="w-100"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-              formControlName="intelligence" style="max-width: 57.08px"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-              formControlName="esprit" style="max-width: 57.08px"></div>
-          <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-              formControlName="corps" style="max-width: 57.08px"></div>
+        <div class="col-md-2 d-flex justify-content-center">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                perso2
+              </button>
         </div>
-      </form>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
+</div>
+
+<div class="collapse" id="feuil1">
+  <div class="card card-body">
+    <div class="container">
       <div class="card">
         <div class="card-body">
-          <div class="container">
-            <form [formGroup]="creationForm">
-              <div class="row">
-                <div class="col">
-                  <label class="col-form-label-sm">Arts est lettres</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="artsEtLettres"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Code et programmation</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="codeEtProgrammation"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Elocution</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="elocution"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Perception</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="perception"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Physique et mathematiques</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="physiqueEtMathematiques"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Psychologie</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="psychologie"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Culture Elfhaym</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="cultureElfhaym"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Culture Fallen</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="cultureFallen"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Culture Krhone</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="cultureKrhone"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <label class="col-form-label-sm">Culture Solarienne</label>
-                </div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="cultureSolarienne"
-                    style="max-width: 57.08px">
-                </div>
+          <form [formGroup]="creationForm">
+            <div class="row">
+              <div class="col text-center">Nom</div>
+              <div class="col text-center">Prenom</div>
+              <div class="col text-center">Age</div>
+              <div class="col text-center">Sexe</div>
+              <div class="col text-center">Taille</div>
+              <div class="col text-center">Classe de combat</div>
+              <div class="col text-center">Grade</div>
+              <div class="w-100"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
+                  id="inputEmail3" formControlName="nom"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
+                  id="inputEmail3" formControlName="prenom"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
+                  id="inputEmail3" formControlName="age"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
+                  id="inputEmail3" formControlName="sexe"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
+                  id="inputEmail3" formControlName="taille"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
+                  id="inputEmail3" formControlName="classe_de_combat"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control ident-perso"
+                  id="inputEmail3" formControlName="grade"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="creationForm">
+            <div class="row">
+              <div class="col text-center">intelligence</div>
+              <div class="col text-center">Esprit</div>
+              <div class="col text-center">Corps</div>
+              <div class="w-100"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
+                  formControlName="intelligence" style="max-width: 57.08px"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
+                  formControlName="esprit" style="max-width: 57.08px"></div>
+              <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
+                  formControlName="corps" style="max-width: 57.08px"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <div class="container">
+                <form [formGroup]="creationForm">
+                  <div class="row">
+                    <div class="col">
+                      <label class="col-form-label-sm">Arts est lettres</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="artsEtLettres"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Code et programmation</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="codeEtProgrammation"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Elocution</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="elocution"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Perception</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="perception"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Physique et mathematiques</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3"
+                        formControlName="physiqueEtMathematiques" style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Psychologie</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="psychologie"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Culture Elfhaym</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="cultureElfhaym"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Culture Fallen</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="cultureFallen"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Culture Krhone</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="cultureKrhone"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Culture Solarienne</label>
+                    </div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="cultureSolarienne"
+                        style="max-width: 57.08px">
+                    </div>
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <img src="../../../../assets/imagePerso1.jpg">
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <div class="container">
+                <form [formGroup]="creationForm">
+                  <div class="row">
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="artsEtLettres"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Arts est lettres</label>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="codeEtProgrammation"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Code et programmation</label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="elocution"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Elocution</label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="perception"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Perception</label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3"
+                        formControlName="physiqueEtMathematiques" style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Physique et mathematiques</label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="psychologie"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Psychologie</label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="cultureElfhaym"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Culture Elfhaym</label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="cultureFallen"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Culture Fallen</label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="cultureKrhone"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Culture Krhone</label>
+                    </div>
+
+                    <div class="w-100"></div>
+                    <div class="col-">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="cultureSolarienne"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="col">
+                      <label class="col-form-label-sm">Culture Solarienne</label>
+                    </div>
+
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-6">
-      <img src="../../../../assets/imagePerso1.jpg">
-    </div>
-
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <div class="container">
-            <form [formGroup]="creationForm">
-              <div class="row">
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="artsEtLettres"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Arts est lettres</label>
-                </div>
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="codeEtProgrammation"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Code et programmation</label>
-                </div>
-
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="elocution"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Elocution</label>
-                </div>
-
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="perception"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Perception</label>
-                </div>
-
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="physiqueEtMathematiques"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Physique et mathematiques</label>
-                </div>
-
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="psychologie"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Psychologie</label>
-                </div>
-
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="cultureElfhaym"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Culture Elfhaym</label>
-                </div>
-
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="cultureFallen"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Culture Fallen</label>
-                </div>
-
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="cultureKrhone"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Culture Krhone</label>
-                </div>
-
-                <div class="w-100"></div>
-                <div class="col-">
-                  <input type="number" class="form-control" id="inputEmail3" formControlName="cultureSolarienne"
-                    style="max-width: 57.08px">
-                </div>
-                <div class="col">
-                  <label class="col-form-label-sm">Culture Solarienne</label>
-                </div>
-
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-        <div class="card">
+      <div class="row">
+        <div class="col">
+          <div class="card">
             <div class="card-body">
               <form [formGroup]="creationForm">
                 <div class="row">
-                  <div class="col">
-                      <label class="col-form-label-sm">intelligence</label>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Astronavigation</label>
                   </div>
-                  <div class="col">
-                      <label class="col-form-label-sm">intelligence</label>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Genie high-tech</label>
                   </div>
-                  <div class="col">
-                      <label class="col-form-label-sm">intelligence</label>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Pilotage</label>
                   </div>
-                  <div class="col">
-                      <label class="col-form-label-sm">intelligence</label>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Technologie Elfhaym</label>
                   </div>
-                  <div class="col">
-                      <label class="col-form-label-sm">intelligence</label>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Technologie Krhone</label>
                   </div>
                   <div class="w-100"></div>
-                  <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                      formControlName="intelligence" style="max-width: 57.08px"></div>
-                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                      formControlName="esprit" style="max-width: 57.08px"></div>
-                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                      formControlName="corps" style="max-width: 57.08px"></div>
-                      <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                        formControlName="intelligence" style="max-width: 57.08px"></div>
-                        <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                          formControlName="intelligence" style="max-width: 57.08px"></div>
-                          <div class="w-100"></div>
-                          <div class="col">
-                              <label class="col-form-label-sm">intelligence</label>
-                          </div>
-                          <div class="col">
-                              <label class="col-form-label-sm">intelligence</label>
-                          </div>
-                          <div class="col">
-                              <label class="col-form-label-sm">intelligence</label>
-                          </div>
-                          <div class="col">
-                              <label class="col-form-label-sm">intelligence</label>
-                          </div>
-                          <div class="col">
-                              <label class="col-form-label-sm">intelligence</label>
-                          </div>
+                  <div class="col d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="intelligence" style="max-width: 57.08px"
+                      formControlName="astronavigation"></div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="esprit" style="max-width: 57.08px"
+                      formControlName="genieHighTech"></div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="corps" style="max-width: 57.08px" formControlName="pilotage">
+                  </div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="intelligence" style="max-width: 57.08px"
+                      formControlName="technologieElfhaym"></div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="intelligence" style="max-width: 57.08px"
+                      formControlName="technologieKrhone"></div>
                   <div class="w-100"></div>
-                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                      formControlName="intelligence" style="max-width: 57.08px"></div>
-                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                      formControlName="esprit" style="max-width: 57.08px"></div>
-                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                      formControlName="corps" style="max-width: 57.08px"></div>
-                      <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                        formControlName="intelligence" style="max-width: 57.08px"></div>
-                        <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
-                          formControlName="intelligence" style="max-width: 57.08px"></div>
-
+                  <div class="col text-center">
+                    <label class="col-form-label-sm ">Discrétion</label>
+                  </div>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Médecine et biologie</label>
+                  </div>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Systemes de sécurité</label>
+                  </div>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Technologie Fallen</label>
+                  </div>
+                  <div class="col text-center">
+                    <label class="col-form-label-sm">Technologie Solarienne</label>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="intelligence" style="max-width: 57.08px"
+                      formControlName="discrétion"></div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="esprit" style="max-width: 57.08px"
+                      formControlName="medecineEtBiologie"></div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="corps" style="max-width: 57.08px"
+                      formControlName="systemesDeSecurité"></div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="intelligence" style="max-width: 57.08px"
+                      formControlName="technologieFallen"></div>
+                  <div class="col-sm d-flex justify-content-center"><input type="text" class="form-control"
+                      id="inputEmail3" formControlName="intelligence" style="max-width: 57.08px"
+                      formControlName="TechnologieSolarienne"></div>
                 </div>
               </form>
             </div>
           </div>
+        </div>
+      </div>
     </div>
+
   </div>
-</div>
