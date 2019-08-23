@@ -24,7 +24,7 @@
   </div>
 
   <div class="row">
-    <div *ngFor='let armesSource of armesSources' class="col" >
+    <div *ngFor="let armesSource of armesSources | find:form.value" class="col" >
       <app-armes-detail [arme]='armesSource._source' [armeId]='armesSource._id'></app-armes-detail>
         </div>
       </div>

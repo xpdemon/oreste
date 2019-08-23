@@ -26,6 +26,7 @@
     "glyphicons": "^0.2.0",
     "jquery": "^3.4.1",
     "ng-sidebar": "^9.0.0",
+    "ngx-order-pipe": "^2.0.3",
     "popper.js": "^1.15.0",
     "process": "^0.11.10",
     "rxjs": "~6.4.0",

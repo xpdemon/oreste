@@ -21,6 +21,8 @@ import { PersonnageOresteDetailComponent } from './personnages/oreste/personnage
 import { CreationPersoOresteComponent } from './personnages/oreste/creation-perso-oreste/creation-perso-oreste.component';
 import { ArmesComponent } from './equipement/orest/armes/armes.component';
 import { ArmesDetailComponent } from './equipement/orest/armes-detail/armes-detail.component';
+import { FindPipe } from './find.pipe';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 
@@ -40,7 +42,8 @@ import { ArmesDetailComponent } from './equipement/orest/armes-detail/armes-deta
     PersonnageOresteDetailComponent,
     CreationPersoOresteComponent,
     ArmesComponent,
-    ArmesDetailComponent
+    ArmesDetailComponent,
+    FindPipe
   ],
   imports: [
     HttpClientModule,
@@ -49,6 +52,7 @@ import { ArmesDetailComponent } from './equipement/orest/armes-detail/armes-deta
     SidebarModule,
     FormsModule,
     ReactiveFormsModule,
+    OrderModule
 
 
   ],
