@@ -19,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonnageOresteComponent } from './personnages/oreste/personnage-oreste/personnage-oreste.component';
 import { PersonnageOresteDetailComponent } from './personnages/oreste/personnage-oreste-detail/personnage-oreste-detail.component';
 import { CreationPersoOresteComponent } from './personnages/oreste/creation-perso-oreste/creation-perso-oreste.component';
+import { ArmesComponent } from './equipement/orest/armes/armes.component';
+import { ArmesDetailComponent } from './equipement/orest/armes-detail/armes-detail.component';
 
 
 
@@ -36,7 +38,9 @@ import { CreationPersoOresteComponent } from './personnages/oreste/creation-pers
     PersonnageDetailsComponent,
     PersonnageOresteComponent,
     PersonnageOresteDetailComponent,
-    CreationPersoOresteComponent
+    CreationPersoOresteComponent,
+    ArmesComponent,
+    ArmesDetailComponent
   ],
   imports: [
     HttpClientModule,
