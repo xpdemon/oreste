@@ -1,0 +1,25 @@
+<div class="container">
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+          </div>
+          <!--end of col-->
+          <div class="col">
+            <input   name="term" [(ngModel)]="term"  class="form-control form-control-lg form-control-borderless" type="search"
+              placeholder="Rechercher une armure">
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--end of col-->
+  </div>
+  <div class="row d-flex justify-content-center " >
+    <div *ngFor="let armuresSource of armuresSources | find:term " class="col" >
+      <app-armures-details [armure]='armuresSource._source' [armureId]='armuresSource._id' (selectedArmure)='armureToSend($event)'></app-armures-details>
+        </div>
+      </div>
+    </div>

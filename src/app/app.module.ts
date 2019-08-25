@@ -23,6 +23,10 @@ import { ArmesComponent } from './equipement/orest/armes/armes.component';
 import { ArmesDetailComponent } from './equipement/orest/armes-detail/armes-detail.component';
 import { FindPipe } from './find.pipe';
 import { OrderModule } from 'ngx-order-pipe';
+import { ArmuresComponent } from './equipement/orest/armures/armures.component';
+import { ArmuresDetailsComponent } from './equipement/orest/armures-details/armures-details.component';
+import { PouvoirComponent } from './equipement/orest/pouvoir/pouvoir.component';
+import { PouvoirDetailComponent } from './equipement/orest/pouvoir-detail/pouvoir-detail.component';
 
 
 
@@ -43,7 +47,11 @@ import { OrderModule } from 'ngx-order-pipe';
     CreationPersoOresteComponent,
     ArmesComponent,
     ArmesDetailComponent,
-    FindPipe
+    FindPipe,
+    ArmuresComponent,
+    ArmuresDetailsComponent,
+    PouvoirComponent,
+    PouvoirDetailComponent
   ],
   imports: [
     HttpClientModule,

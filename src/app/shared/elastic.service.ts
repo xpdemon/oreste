@@ -15,6 +15,7 @@ export class ElasticService {
     }
   };
 
+
   constructor() {
     if (!this.client) {
       this.connect();
@@ -62,6 +63,21 @@ export class ElasticService {
         'query': {
           'term': {
             'joueur': {
+              'value': param
+            }
+          }
+        }
+      }
+    });
+  }
+
+  getByType(_index, param): any {
+    return this.client.search({
+      index: _index,
+      body: {
+        'query': {
+          'term': {
+            'type': {
               'value': param
             }
           }

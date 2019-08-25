@@ -12,7 +12,7 @@ export class ArmesComponent implements OnInit {
 
   @Output() selectedArme = new EventEmitter<Arme>();
 
-  form: FormGroup;
+
   armesSources: ArmeSource[];
   arme: Arme ;
   constructor(private es: ElasticService) {}
@@ -22,7 +22,7 @@ export class ArmesComponent implements OnInit {
   }
 
   GetAllArmes(){
-    this.es.getAllDocuments('armes-oreste')
+    this.es.getByType('equipement-oreste', 'armes')
     .then(response => {
       this.armesSources = response.hits.hits;
       console.log(response);

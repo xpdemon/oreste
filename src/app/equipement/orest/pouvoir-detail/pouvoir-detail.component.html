@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row align-items-center" *ngIf="pouvoir">
+      <div class="col d-flex justify-content-center">
+        <div class="card"style="width: 15rem;" (click)='getId()' data-toggle="collapse"  data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+            <img class="card-img-top" src={{pouvoir.image}}>
+        </div>
+      </div>
+    </div>
+  </div>
