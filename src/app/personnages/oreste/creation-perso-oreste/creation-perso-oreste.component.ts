@@ -5,6 +5,8 @@ import { Arme } from 'src/app/equipement/orest/arme.interface';
 import { Armures, ArmureSource } from 'src/app/equipement/orest/armures.interface';
 import { ElasticService } from 'src/app/shared/elastic.service';
 import { PouvoirSource, Pouvoir } from 'src/app/equipement/orest/pouvoir.interface';
+import { Mods, ModsSources } from 'src/app/equipement/orest/mods.interface';
+import { Bouclier, BouclierSource } from 'src/app/equipement/orest/bouclier.interface';
 
 
 
@@ -21,9 +23,14 @@ export class CreationPersoOresteComponent implements OnInit {
   isArme: number;
   armure: Armures;
   pouvoir: Pouvoir;
+  mods: Mods;
+  bouclier: Bouclier;
   pouvoirList: Pouvoir[] = [];
+  modsList: Mods[] = [];
   armuresSources: ArmureSource[];
   pouvoirSources: PouvoirSource[];
+  modsSources: ModsSources[];
+  bouclierSources: BouclierSource[];
 
 
   creationForm: FormGroup;
@@ -108,6 +115,15 @@ export class CreationPersoOresteComponent implements OnInit {
     this.pouvoirList.push(this.pouvoir);
   }
 
+  getSelectedMod(mod: Mods){
+    this.mods = mod;
+    this.modsList.push(this.mods);
+  }
+
+  getSelectedBouclier(bouclier: Bouclier){
+    this.bouclier = bouclier;
+  }
+
   GetAllArmues(){
     this.es.getByType('equipement-oreste', 'armures')
     .then(response => {
@@ -121,7 +137,7 @@ export class CreationPersoOresteComponent implements OnInit {
   GetAllBouclier(){
     this.es.getByType('equipement-oreste', 'bouclier')
     .then(response => {
-      this.armuresSources = response.hits.hits;
+      this.bouclierSources = response.hits.hits;
       console.log(response);
     }, error => {
       console.log(error);
@@ -131,7 +147,7 @@ export class CreationPersoOresteComponent implements OnInit {
   GetAllMods(){
     this.es.getByType('equipement-oreste', 'module')
     .then(response => {
-      this.armuresSources = response.hits.hits;
+      this.modsSources = response.hits.hits;
       console.log(response);
     }, error => {
       console.log(error);
@@ -148,8 +164,15 @@ export class CreationPersoOresteComponent implements OnInit {
     });
   }
 
-  suppPouvoir(pouvoir:Pouvoir){
+
+  suppPouvoir(pouvoir: Pouvoir){
     const index: number = this.pouvoirList.indexOf(pouvoir);
     this.pouvoirList.splice(index, 1);
   }
+
+  suppMods(mod: Mods){
+    const index: number = this.modsList.indexOf(mod);
+    this.modsList.splice(index, 1);
+  }
+
 }

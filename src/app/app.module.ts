@@ -27,6 +27,10 @@ import { ArmuresComponent } from './equipement/orest/armures/armures.component';
 import { ArmuresDetailsComponent } from './equipement/orest/armures-details/armures-details.component';
 import { PouvoirComponent } from './equipement/orest/pouvoir/pouvoir.component';
 import { PouvoirDetailComponent } from './equipement/orest/pouvoir-detail/pouvoir-detail.component';
+import { ModsComponent } from './equipement/orest/mods/mods.component';
+import { ModsDetailComponent } from './equipement/orest/mods-detail/mods-detail.component';
+import { BouclierComponent } from './equipement/orest/bouclier/bouclier.component';
+import { BouclierDetailComponent } from './equipement/orest/bouclier-detail/bouclier-detail.component';
 
 
 
@@ -51,7 +55,11 @@ import { PouvoirDetailComponent } from './equipement/orest/pouvoir-detail/pouvoi
     ArmuresComponent,
     ArmuresDetailsComponent,
     PouvoirComponent,
-    PouvoirDetailComponent
+    PouvoirDetailComponent,
+    ModsComponent,
+    ModsDetailComponent,
+    BouclierComponent,
+    BouclierDetailComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,25 @@
+<div class="container">
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+          </div>
+          <!--end of col-->
+          <div class="col">
+            <input   name="term" [(ngModel)]="term"  class="form-control form-control-lg form-control-borderless" type="search"
+              placeholder="Rechercher un module">
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--end of col-->
+  </div>
+  <div class="row d-flex justify-content-center " >
+    <div *ngFor="let modSource of modsSources | find:term " class="col" >
+      <app-mods-detail [mods]='modSource._source' [id]='modSource._id' (selectedMods)='modToSend($event)'></app-mods-detail>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,25 @@
+<div class="container">
+  <br />
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      <form class="card card-sm">
+        <div class="card-body row no-gutters align-items-center">
+          <div class="col-auto">
+            <i class="fas fa-search h4 text-body"></i>
+          </div>
+          <!--end of col-->
+          <div class="col">
+            <input   name="term" [(ngModel)]="term"  class="form-control form-control-lg form-control-borderless" type="search"
+              placeholder="Rechercher un bouclier">
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--end of col-->
+  </div>
+  <div class="row d-flex justify-content-center " >
+    <div *ngFor="let boubouSource of bouclierSource | find:term " class="col" >
+      <app-bouclier-detail [bouclier]='boubouSource._source' [id]='boubouSource._id' (selectedBouclier)='bouclierToSend($event)'></app-bouclier-detail>
+        </div>
+      </div>
+    </div>

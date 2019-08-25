@@ -521,13 +521,15 @@
           </div>
           <div class='row'>
             <div class="col">
-              <div class="card hoverable marge">
-                <div class="card-body">
-                  <div class="container">
-                    Bouclier
-                  </div>
-                </div>
-              </div>
+              <div class="card hoverable marge" style="width: 20rem;" role="button" data-toggle="collapse"
+            data-target="#bouclier" aria-expanded="false" aria-controls="bouclier"
+            (click)='GetAllBouclier()'>
+            <div class='container'>
+              <img class="card-img-top" *ngIf="bouclier" src={{bouclier.image}}>
+              <img class="card-img-top" *ngIf="!bouclier"
+                src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+            </div>
+          </div>
             </div>
           </div>
 
@@ -535,31 +537,32 @@
 
         <div class="col-" style='padding-bottom: 15px;'>
           <div class="card hoverable marge" style="width: 20rem;" role="button" data-toggle="collapse"
-            data-target="#armures" aria-expanded="false" aria-controls="armes"
-            (click)='GetAllArmues()'>
-            <div class='container'>
-              <img class="card-img-top" *ngIf="armure" src={{armure.image}}>
-              <img class="card-img-top" *ngIf="!armure"
-                src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+              data-target="#armures" aria-expanded="false" aria-controls="armes"
+              (click)='GetAllArmues()'>
+              <div class='container'>
+                <img class="card-img-top" *ngIf="armure" src={{armure.image}}>
+                <img class="card-img-top" *ngIf="!armure"
+                  src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+              </div>
             </div>
-          </div>
+
           <div class='row'>
               <div class="col">
                 <div class='overflow-auto thumbnail zoom ' style="max-height: 420px">
-                    <div *ngIf="pouvoirList.length === 0" class="card hoverable2" style="width: 19rem;" role="button"
-                    data-toggle="collapse" data-target="#pouvoir" aria-expanded="false" aria-controls="pouvoir"
-                    (click)='GetAllPouvoir()'>
+                    <div *ngIf="modsList.length === 0" class="card hoverable2" style="width: 19rem;" role="button"
+                    data-toggle="collapse" data-target="#mod" aria-expanded="false" aria-controls="mod"
+                    (click)='GetAllMods()'>
                     <div class='container'>
                       <img class="card-img-top"
                         src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
                     </div>
                   </div>
-                  <div *ngFor="let pouvoirL of pouvoirList" class="card " style="width: 19rem;" role="button"
-                    data-toggle="collapse" data-target="#pouvoir" aria-expanded="false" aria-controls="pouvoir"
-                    (click)='GetAllPouvoir()'>
+                  <div *ngFor="let modL of modsList" class="card " style="width: 19rem;" role="button"
+                    data-toggle="collapse" data-target="#mod" aria-expanded="false" aria-controls="mod"
+                    (click)='GetAllMods()'>
                     <div class='container'>
-                      <img class=" card-img-top " *ngIf="pouvoirL" src={{pouvoirL.image}}>
-                      <img class=" card-img-top " *ngIf="!pouvoirL"
+                      <img class=" card-img-top " *ngIf="modL" src={{modL.image}}>
+                      <img class=" card-img-top " *ngIf="!modL"
                         src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
                     </div>
                   </div>
@@ -569,10 +572,10 @@
             <div class="row ">
               <div class="col d-flex justify-content-center">
                 <button type="button" class="btn btn-outline-primary d-flex justify-content-center" role="button"
-                  data-toggle="collapse" data-target="#pouvoir" aria-expanded="false" aria-controls="pouvoir"
-                  (click)='GetAllPouvoir()'>Ajouter un <br> Mod</button>
+                  data-toggle="collapse" data-target="#mod" aria-expanded="false" aria-controls="mod"
+                  (click)='GetAllMods()'>Ajouter un <br> Mod</button>
                 <button type="button" class="btn btn-outline-danger d-flex justify-content-center" role="button"
-                  data-toggle="collapse" data-target="#pouvoir2" aria-expanded="false" aria-controls="pouvoir2">Supprimer un
+                  data-toggle="collapse" data-target="#mod2" aria-expanded="false" aria-controls="mod2">Supprimer un
                   <br> Mod</button>
               </div>
             </div>
@@ -586,6 +589,12 @@
       <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
     </button>
     <app-armes (selectedArme)='getSelectedArme1($event)'></app-armes>
+  </div>
+  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="bouclier">
+    <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+      <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
+    </button>
+    <app-bouclier (selectedBouclier)='getSelectedBouclier($event)' [bouclierSource]='bouclierSources'></app-bouclier>
   </div>
   <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="armures">
     <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
@@ -613,8 +622,30 @@
             </div>
           </div>
         </div>
-
     </div>
+
+    <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="mod">
+      <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+        <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
+      </button>
+      <app-mods (selectedMod)='getSelectedMod($event)' [modsSources]='modsSources'></app-mods>
+    </div>
+
+    <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="mod2">
+      <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+        <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
+      </button>
+      <div class="container">
+          <div class="row align-items-center">
+            <div class="col d-flex justify-content-center">
+              <div *ngFor="let modL of modsList" class="card"style="width: 15rem;" data-toggle="collapse"  data-target="#feuil3" aria-expanded="false" aria-controls="feuil3" (click)="suppMods(modL)">
+                  <img class="card-img-top" src={{modL.image}}>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
 
 </div>
 
