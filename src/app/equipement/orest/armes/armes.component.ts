@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ArmeSource } from '../arme.interface';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ArmeSource, Arme } from '../arme.interface';
 import { ElasticService } from 'src/app/shared/elastic.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -10,13 +10,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ArmesComponent implements OnInit {
 
+  @Output() selectedArme = new EventEmitter<Arme>();
+
   form: FormGroup;
   armesSources: ArmeSource[];
-  constructor(private es: ElasticService) {
-    this.form = new FormGroup({
-      arme: new FormControl('', Validators.required)
-    });
-   }
+  arme: Arme ;
+  constructor(private es: ElasticService) {}
 
   ngOnInit() {
     this.GetAllArmes();
@@ -32,6 +31,10 @@ export class ArmesComponent implements OnInit {
     });
   }
 
+  armeToSend(arme: Arme){
+    this.arme = arme;
+    this.selectedArme.emit(this.arme);
+  }
 
 
 }

@@ -1,9 +1,11 @@
 <div class="container">
-  <div class="row" *ngIf="arme">
-    <div class="col">
-      <div class="card"style="width: 15rem;" id={{arme.nom}}>
+  <div class="row align-items-center" *ngIf="arme">
+    <div class="col d-flex justify-content-center">
+      <div class="card"style="width: 15rem;" (click)='getid()' data-toggle="collapse"  data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
           <img class="card-img-top" src={{arme.image}}>
       </div>
     </div>
   </div>
 </div>
+
+

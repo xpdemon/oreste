@@ -8,7 +8,25 @@
 }
 
 .card.hoverable:hover {
-  transform: scale(1.05, 1.05);
+  transform: scale(1.01, 1.01);
+
+}
+
+.card.hoverable.marge{
+  margin-right: 5px;
+
 }
 
 
+
+
+.modal-center{
+  top: 10%;
+  transform: translate(-50%)!important;
+}
+
+.modal-dialog{
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}

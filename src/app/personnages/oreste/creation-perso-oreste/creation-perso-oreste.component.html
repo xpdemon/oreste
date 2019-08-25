@@ -390,7 +390,41 @@
           <div class="card">
             <div class="card-body">
               <div class="container">
-                comp de combat
+                <form [formGroup]="creationForm">
+                  <div class="row">
+                    <div class="col">
+                      <label class="col-form-label-sm">Artillerie</label>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="artillerie"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col d-flex justify-content-center">
+                      <label class="col-form-label-sm">Canons courts</label>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="canonsCourts"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col d-flex justify-content-center">
+                      <label class="col-form-label-sm">Canons longs</label>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="canonsLongs"
+                        style="max-width: 57.08px">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col d-flex justify-content-center">
+                      <label class="col-form-label-sm">Canons lourds</label>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <input type="number" class="form-control" id="inputEmail3" formControlName="canonsLourds"
+                        style="max-width: 57.08px">
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -417,34 +451,29 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card hoverable">
-            <div class="card-body ">
-              <div class="container">
-                Arme 1
-              </div>
+        <div class="col-" style='padding-bottom: 15px;' >
+          <div class="card hoverable marge" style="width: 20rem;" role="button" data-toggle="collapse" data-target="#armes"
+            aria-expanded="false" aria-controls="armes" (click)='isArme=1'>
+            <div class='container'>
+              <img class="card-img-top" *ngIf="arme1" src={{arme1.image}}>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card hoverable">
-            <div class="card-body ">
-              <div class="container">
-                Arme 2
-              </div>
+        <div class="col-" style='padding-bottom: 15px;'>
+          <div class="card hoverable marge" style="width: 20rem;" role="button" data-toggle="collapse" data-target="#armes"
+            aria-expanded="false" aria-controls="armes" (click)='isArme=2'>
+            <div class='container'>
+              <img class="card-img-top" *ngIf="arme2" src={{arme2.image}}>
             </div>
           </div>
-
         </div>
-        <div class="col">
-          <div class="card hoverable">
-            <div class="card-body">
-              <div class="container">
-                Armure
-              </div>
+        <div class="col-"style='padding-bottom: 15px;'>
+          <div class="card hoverable"  style="width: 20rem;" role="button" data-toggle="collapse" data-target="#armes"
+            aria-expanded="false" aria-controls="armes" (click)='isArme=2'>
+            <div class='container'>
+              <img class="card-img-top" *ngIf="arme2" src={{arme2.image}}>
             </div>
           </div>
-
         </div>
       </div>
       <div class="row">
@@ -467,57 +496,63 @@
             </div>
           </div>
           <div class="row">
-              <div class="col">
-                <div class="card hoverable">
-                  <div class="card-body">
-                    <div class="container">
-                        Mod Armure 2
-                    </div>
+            <div class="col">
+              <div class="card hoverable">
+                <div class="card-body">
+                  <div class="container">
+                    Mod Armure 2
                   </div>
                 </div>
               </div>
             </div>
-            <div class="row">
-                <div class="col">
-                  <div class="card hoverable">
-                    <div class="card-body">
-                      <div class="container">
-                          Mod Armure 3
-                      </div>
-                    </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card hoverable">
+                <div class="card-body">
+                  <div class="container">
+                    Mod Armure 3
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
+  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="armes">
+    <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+      <img src="../../../../assets/collapse-expand-icon-29.jpg " style="width: 25px" style="height: 25px">
+    </button>
+    <app-armes (selectedArme)='getSelectedArme1($event)'></app-armes>
+  </div>
+</div>
 
-  <!--FIN-->
+<!--FIN-->
 
 
 
 
-  <div class="container">
-    <div class="row d-flex justify-content-center">
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="btn btn-secondary active" role="button" data-toggle="collapse" data-target="#feuil1"
-          aria-expanded="true" aria-controls="feuil1">
-          <input type="radio" name="options" id="option1" autocomplete="off"> Page 1
-        </label>
-        <label class="btn btn-secondary active" role="button" data-toggle="collapse" data-target="#feuil3"
-          aria-expanded="false" aria-controls="feuil3">
-          <input type="radio" name="options" id="option3" autocomplete="off"> Page 2
-        </label>
-      </div>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active" role="button" data-toggle="collapse" data-target="#feuil1"
+        aria-expanded="true" aria-controls="feuil1">
+        <input type="radio" name="options" id="option1" autocomplete="off"> Page 1
+      </label>
+      <label class="btn btn-secondary active" role="button" data-toggle="collapse" data-target="#feuil3"
+        aria-expanded="false" aria-controls="feuil3">
+        <input type="radio" name="options" id="option3" autocomplete="off"> Page 2
+      </label>
     </div>
   </div>
+</div>
 
-  <div class="container">
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-offset-5 col-md-2">
-        <button type="button" class="btn btn-outline-success">Créer le personnage</button>
-      </div>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-offset-5 col-md-2">
+      <button type="button" class="btn btn-outline-success">Créer le personnage</button>
     </div>
   </div>
+</div>

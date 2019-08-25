@@ -1,6 +1,7 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PersonnageOreste } from '../personnage-oreste/personnage-oreste.interface';
+import { Arme } from 'src/app/equipement/orest/arme.interface';
 
 
 
@@ -12,7 +13,10 @@ import { PersonnageOreste } from '../personnage-oreste/personnage-oreste.interfa
 })
 export class CreationPersoOresteComponent implements OnInit {
 
-  @Output() persoToCreate =  new EventEmitter<PersonnageOreste>();
+  arme1: Arme;
+  arme2: Arme;
+  isArme: number;
+  isOpen: boolean =true;
 
   creationForm: FormGroup;
   constructor() {
@@ -55,5 +59,22 @@ export class CreationPersoOresteComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  getSelectedArme1(arme: Arme){
+    if (this.isArme === 1){
+    this.arme1 = arme;
+    }
+
+    if(this.isArme === 2){
+      this.arme2 = arme;
+    }
+
+    this.isOpen=false;
+
+     }
+
+
+
+
 
 }
