@@ -42,11 +42,11 @@
               <div class="col text-center">Esprit</div>
               <div class="col text-center">Corps</div>
               <div class="w-100"></div>
-              <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
+              <div class="col d-flex justify-content-center"><input type="number" class="form-control" id="inputEmail3"
                   formControlName="intelligence" style="max-width: 57.08px"></div>
-              <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
+              <div class="col d-flex justify-content-center"><input type="number" class="form-control" id="inputEmail3"
                   formControlName="esprit" style="max-width: 57.08px"></div>
-              <div class="col d-flex justify-content-center"><input type="text" class="form-control" id="inputEmail3"
+              <div class="col d-flex justify-content-center"><input type="number" class="form-control" id="inputEmail3"
                   formControlName="corps" style="max-width: 57.08px"></div>
             </div>
           </form>
@@ -673,7 +673,7 @@
 <div class="container">
   <div class="row d-flex justify-content-center">
     <div class="col-md-offset-5 col-md-2">
-      <button type="button" class="btn btn-outline-success">Créer le personnage</button>
+      <button type="button" class="btn btn-outline-success" (click)='onSubmit(creationForm.value)'>Créer le personnage</button>
     </div>
   </div>
 </div>

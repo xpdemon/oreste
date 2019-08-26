@@ -34,20 +34,20 @@ export interface PersonnageOreste {
   technologieFallen: number;
   technologieKrhone: number;
   technologieSolarienne: number;
-  acrobation: number;
+  acrobatie: number;
   apesanteur: number;
   athletisme: number;
   conduite: number;
   intimidation: number;
   seduction: number;
-  sociologieAlfhaym: number;
+  sociologieElfhaym: number;
   sociologieFallen: number;
-  sociologieKrone: number;
+  sociologieKrhone: number;
   sociologieSolarienne: number;
   artillerie: number;
   canonsCourts: number;
-  canonsnumbers: number;
   canonsLourds: number;
+  canonsLongs: number;
   lames: number;
   resilience: number;
   sensDuCombat: number;
@@ -55,7 +55,9 @@ export interface PersonnageOreste {
   armeSecondaire: string;
   armure: string;
   bouclierDeflecteur: string;
-  pouvoirs: string;
+  pouvoirs: string[];
+  modArmure: string[];
+
 }
 
 export interface PersonnageOrestSource {

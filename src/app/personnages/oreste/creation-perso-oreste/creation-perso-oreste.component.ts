@@ -18,6 +18,7 @@ import { Bouclier, BouclierSource } from 'src/app/equipement/orest/bouclier.inte
 })
 export class CreationPersoOresteComponent implements OnInit {
 
+  personnage: PersonnageOreste;
   arme1: Arme;
   arme2: Arme;
   isArme: number;
@@ -106,73 +107,165 @@ export class CreationPersoOresteComponent implements OnInit {
 
   }
 
-  getSelectedArmure(armure: Armures){
+  getSelectedArmure(armure: Armures) {
     this.armure = armure;
   }
 
-  getSelectedPouvoir(pouvoir: Pouvoir){
+  getSelectedPouvoir(pouvoir: Pouvoir) {
     this.pouvoir = pouvoir;
     this.pouvoirList.push(this.pouvoir);
   }
 
-  getSelectedMod(mod: Mods){
+  getSelectedMod(mod: Mods) {
     this.mods = mod;
     this.modsList.push(this.mods);
   }
 
-  getSelectedBouclier(bouclier: Bouclier){
+  getSelectedBouclier(bouclier: Bouclier) {
     this.bouclier = bouclier;
   }
 
-  GetAllArmues(){
+  GetAllArmues() {
     this.es.getByType('equipement-oreste', 'armures')
-    .then(response => {
-      this.armuresSources = response.hits.hits;
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
+      .then(response => {
+        this.armuresSources = response.hits.hits;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
   }
 
-  GetAllBouclier(){
+  GetAllBouclier() {
     this.es.getByType('equipement-oreste', 'bouclier')
-    .then(response => {
-      this.bouclierSources = response.hits.hits;
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
+      .then(response => {
+        this.bouclierSources = response.hits.hits;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
   }
 
-  GetAllMods(){
+  GetAllMods() {
     this.es.getByType('equipement-oreste', 'module')
-    .then(response => {
-      this.modsSources = response.hits.hits;
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
+      .then(response => {
+        this.modsSources = response.hits.hits;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
   }
 
-  GetAllPouvoir(){
+  GetAllPouvoir() {
     this.es.getByType('equipement-oreste', 'pouvoir')
-    .then(response => {
-      this.pouvoirSources = response.hits.hits;
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
+      .then(response => {
+        this.pouvoirSources = response.hits.hits;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
   }
 
 
-  suppPouvoir(pouvoir: Pouvoir){
+  suppPouvoir(pouvoir: Pouvoir) {
     const index: number = this.pouvoirList.indexOf(pouvoir);
     this.pouvoirList.splice(index, 1);
   }
 
-  suppMods(mod: Mods){
+  suppMods(mod: Mods) {
     const index: number = this.modsList.indexOf(mod);
     this.modsList.splice(index, 1);
   }
 
+
+
+  onSubmit(value) {
+    const modIdList: string[] = [];
+    const pouvoirIdList: string[] = [];
+    if (value.nom === '' || value.image === '') {
+      console.log('test');
+    } else {
+
+      this.modsList.forEach(mod =>{
+        modIdList.push(mod.id);
+      });
+
+      this.pouvoirList.forEach(pouvoir => {
+        pouvoirIdList.push(pouvoir.id);
+      });
+
+      this.es.createDoc({
+        index: 'personnages-oreste',
+        id: localStorage.getItem('current_Game') + '-' + localStorage.getItem('current_player') + '-' + value.nom,
+        body: {
+          id: localStorage.getItem('current_Game') + '-' + localStorage.getItem('current_player') + '-' + value.nom,
+          joueur: localStorage.getItem('current_player'),
+          nom: value.nom,
+          image: value.image,
+          prenom: value.prenom,
+          age: value.age,
+          sexe: value.sexe,
+          taille: value.taille,
+          classe_de_combat: value.classe_de_combat,
+          grade: value.grade,
+          intelligence: value.intelligence,
+          esprit: value.esprit,
+          corps: value.corps,
+          artsEtLettres: value.artsEtLettres,
+          codeEtProgrammation: value.codeEtProgrammation,
+          elocution: value.elocution,
+          perception: value.perception,
+          physiqueEtMathematiques: value.physiqueEtMathematiques,
+          psychologie: value.psychologie,
+          cultureElfhaym: value.cultureElfhaym,
+          cultureFallen: value.cultureFallen,
+          cultureKhrone: value.cultureKrhone,
+          cultureSolarienne: value.cultureSolarienne,
+          astronavigation: value.astronavigation,
+          genieHighTech: value.genieHighTech,
+          pilotage: value.pilotage,
+          technologieElfhaym: value.technologieElfhaym,
+          technologieKrhone: value.technologieKrhone,
+          discretion: value.discrétion,
+          medecineEtBiologie: value.medecineEtBiologie,
+          systemesDeSecurite: value.systemesDeSecurité,
+          technologieFallen: value.technologieFallen,
+          technologieSolarienne: value.technologieSolarienne,
+          acrobatie: value.acrobatie,
+          apesanteur: value.apesanteur,
+          athletisme: value.athletisme,
+          conduite: value.conduite,
+          intimidation: value.intimidation,
+          seduction: value.seduction,
+          sociologieElfhaym: value.sociologieElfhaym,
+          sociologieFallen: value.sociologieFallen,
+          sociologieKrhone: value.sociologieKrhone,
+          sociologieSolarienne: value.sociologieSolarienne,
+          artillerie: value.artillerie,
+          canonsCourts: value.canonsCourts,
+          canonsLongs: value.canonsLongs,
+          canonsLourds: value.canonsLourds,
+          lames: value.lames,
+          resilience: value.resilence,
+          sensDuCombat: value.sensDuCombat,
+          armePrincipale: this.arme1.id,
+          armeSecondaire: this.arme2.id,
+          armure: this.armure.id,
+          bouclierDeflecteur: this.bouclier.id,
+          modArmure: modIdList,
+          pouvoirs: pouvoirIdList,
+        }
+      }).then((result) => {
+        console.log(result);
+        window.location.reload();
+      }, error => {
+        console.error(error);
+      });
+
+    }
+  }
+
+
+
 }
+
+
