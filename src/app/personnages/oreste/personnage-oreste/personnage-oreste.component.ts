@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonnageOreste } from './personnage-oreste.interface';
 
 @Component({
   selector: 'app-personnage-oreste',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personnage-oreste.component.scss']
 })
 export class PersonnageOresteComponent implements OnInit {
-
+  personnage: PersonnageOreste;
   constructor() { }
 
   ngOnInit() {
