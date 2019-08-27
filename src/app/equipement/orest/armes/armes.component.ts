@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ArmeSource, Arme } from '../arme.interface';
 import { ElasticService } from 'src/app/shared/elastic.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -11,9 +11,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ArmesComponent implements OnInit {
 
   @Output() selectedArme = new EventEmitter<Arme>();
+  @Input() armesSources: ArmeSource[];
 
 
-  armesSources: ArmeSource[];
+
   arme: Arme ;
   constructor(private es: ElasticService) {}
 

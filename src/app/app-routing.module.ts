@@ -8,6 +8,7 @@ import { TestEsComponent } from './test-es/test-es.component';
 import { PersonnagesComponent } from './personnages/personnages/personnages.component';
 import { CreationPersoOresteComponent } from './personnages/oreste/creation-perso-oreste/creation-perso-oreste.component';
 import { ArmesComponent } from './equipement/orest/armes/armes.component';
+import { PersonnageOresteComponent } from './personnages/oreste/personnage-oreste/personnage-oreste.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'joueur/:pseudo', component: GamesComponent},
   {path: 'personnages', component: PersonnagesComponent},
   {path: 'testCreation', component: CreationPersoOresteComponent},
-  {path: 'testArmes', component: ArmesComponent}
+  {path: 'testArmes', component: ArmesComponent},
+  {path: 'perso/:id', component: PersonnageOresteComponent}
 
 ];
 

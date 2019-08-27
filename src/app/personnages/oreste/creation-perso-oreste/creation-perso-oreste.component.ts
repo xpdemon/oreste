@@ -185,7 +185,7 @@ export class CreationPersoOresteComponent implements OnInit {
       console.log('test');
     } else {
 
-      this.modsList.forEach(mod =>{
+      this.modsList.forEach(mod => {
         modIdList.push(mod.id);
       });
 
@@ -195,9 +195,10 @@ export class CreationPersoOresteComponent implements OnInit {
 
       this.es.createDoc({
         index: 'personnages-oreste',
-        id: localStorage.getItem('current_Game') + '-' + localStorage.getItem('current_player') + '-' + value.nom,
+        id: localStorage.getItem('current_Game') +  localStorage.getItem('current_player') + value.nom,
         body: {
-          id: localStorage.getItem('current_Game') + '-' + localStorage.getItem('current_player') + '-' + value.nom,
+          id: localStorage.getItem('current_Game').toLocaleLowerCase() +
+          localStorage.getItem('current_player').toLocaleLowerCase() + value.nom.toLocaleLowerCase(),
           joueur: localStorage.getItem('current_player'),
           nom: value.nom,
           image: value.image,

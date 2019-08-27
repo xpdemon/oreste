@@ -1,0 +1,674 @@
+
+<div *ngIf='personnage' class="accordion" id="accordionExample">
+  <div class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample" id="feuil1">
+    <div class="container">
+      <!--ID DU PERSO-->
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col text-center">Nom</div>
+            <div class="col text-center">Prenom</div>
+            <div class="col text-center">Age</div>
+            <div class="col text-center">Sexe</div>
+            <div class="col text-center">Taille</div>
+            <div class="col text-center">Classe de combat</div>
+            <div class="col text-center">Grade</div>
+            <div class="col text-center">URL de l'image</div>
+            <div class="w-100"></div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.nom}}
+              </h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.prenom}}
+              </h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.age}}
+              </h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.sexe}}
+              </h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.taille}}
+              </h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.classe_de_combat}}
+              </h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.grade}}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FIN ID DU PERSO -->
+
+      <!--STATS-->
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col text-center">intelligence</div>
+            <div class="col text-center">Esprit</div>
+            <div class="col text-center">Corps</div>
+            <div class="w-100"></div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.intelligence}}
+              </h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.esprit}}
+              </h5>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <h5>
+                {{personnage.corps}}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FIN DES STATS-->
+
+      <!--COMP-->
+      <div class="row">
+
+        <!--COMP 1-->
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <label class="col-form-label-sm">Arts est lettres</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.artsEtLettres}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Code et programmation</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.codeEtProgrammation}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Elocution</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.elocution}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Perception</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.perception}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Physique et mathematiques</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.physiqueEtMathematiques}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Psychologie</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.psychologie}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Culture Elfhaym</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.cultureElfhaym}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Culture Fallen</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.cultureFallen}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Culture Krhone</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.cultureKhrone}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Culture Solarienne</label>
+                  </div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.cultureSolarienne}}
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FIN COMP 1-->
+
+        <!--IMAGE CENTRALE-->
+        <div class="col-6">
+          <img src="https://i.ibb.co/nChn51r/image-Perso1.jpg" alt="image-Perso1">
+        </div>
+        <!--FIN IMAGE CENTRALE-->
+
+        <!--COMP 2-->
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-">
+                    <h5>
+                      {{personnage.acrobatie}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Acrobatie</label>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.apesanteur}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Apesanteur</label>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.athletisme}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Athletisme</label>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.conduite}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Conduite</label>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.intimidation}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Intimidation</label>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.seduction}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Seduction</label>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.sociologieElfhaym}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Sociologie Elfhaym</label>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.sociologieFallen}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Sociologie Fallen</label>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.sociologieKrhone}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Sociologie Krhone</label>
+                  </div>
+
+                  <div class="w-100"></div>
+                  <div class="col-">
+                    <h5>
+                      {{personnage.sociologieSolarienne}}
+                    </h5>
+                  </div>
+                  <div class="col">
+                    <label class="col-form-label-sm">Sociologie Solarienne</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--FIN COMP 2-->
+      </div>
+      <!--FIN COMP VERTICALE-->
+
+      <!--DEBUT COMP HORIZONTALE-->
+      <div class="row">
+        <!--COMP 1 H -->
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Astronavigation</label>
+                </div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Genie high-tech</label>
+                </div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Pilotage</label>
+                </div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Technologie Elfhaym</label>
+                </div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Technologie Krhone</label>
+                </div>
+                <div class="w-100"></div>
+                <div class="col d-flex justify-content-center">
+                  <h5>
+                    {{personnage.astronavigation}}
+                  </h5>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.genieHighTech}}
+                  </h5>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.pilotage}}
+                  </h5>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.technologieElfhaym}}
+                  </h5>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.technologieKrhone}}
+                  </h5>
+                </div>
+                <div class="w-100"></div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm ">Discrétion</label>
+                </div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Médecine et biologie</label>
+                </div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Systemes de sécurité</label>
+                </div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Technologie Fallen</label>
+                </div>
+                <div class="col text-center">
+                  <label class="col-form-label-sm">Technologie Solarienne</label>
+                </div>
+                <div class="w-100"></div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.discretion}}
+                  </h5>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.medecineEtBiologie}}
+                  </h5>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.systemesDeSecurite}}
+                  </h5>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.technologieFallen}}
+                  </h5>
+                </div>
+                <div class="col-sm d-flex justify-content-center">
+                  <h5>
+                    {{personnage.technologieSolarienne}}
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--FIN COMP HORIZONTALE-->
+    </div>
+  </div>
+
+
+  <!--PAGE DE COMBAT CARTES-->
+  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="feuil3">
+    <div class="container">
+
+
+      <div class="row">
+        <div class="col">
+
+          <!--COMP DE ECOMBAT-->
+          <div class="card">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                    <label class="col-form-label-sm">Artillerie</label>
+                  </div>
+                  <div class="col d-flex justify-content-center">
+                    <h5>
+                      {{personnage.artillerie}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col d-flex justify-content-center">
+                    <label class="col-form-label-sm">Canons courts</label>
+                  </div>
+                  <div class="col d-flex justify-content-center">
+                    <h5>
+                      {{personnage.canonsCourts}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col d-flex justify-content-center">
+                    <label class="col-form-label-sm">Canons longs</label>
+                  </div>
+                  <div class="col d-flex justify-content-center">
+                    <h5>
+                      {{personnage.canonsLongs}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col d-flex justify-content-center">
+                    <label class="col-form-label-sm">Canons lourds</label>
+                  </div>
+                  <div class="col d-flex justify-content-center">
+                    <h5>
+                      {{personnage.canonsLourds}}
+                    </h5>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col d-flex justify-content-center">
+                    <label class="col-form-label-sm">Lames</label>
+                  </div>
+                  <div class="col d-flex justify-content-center">
+                    <h5>
+                      {{personnage.lames}}
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--FIN COMP DE COMBAT-->
+
+          <!--PV ET SENS-->
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card-body">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col d-flex justify-content-center">
+                        <label class="col-form-label-sm">Resilience</label>
+                      </div>
+                      <div class="col d-flex justify-content-center">
+                        <h5>
+                          {{personnage.resilience}}
+                        </h5>
+                      </div>
+                      <div class="w-100"></div>
+                      <div class="col d-flex justify-content-center">
+                        <label class="col-form-label-sm">Sens du combat</label>
+                      </div>
+                      <div class="col d-flex justify-content-center">
+                        <h5>
+                          {{personnage.sensDuCombat}}
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--FIN PV ET SENS-->
+            </div>
+          </div>
+        </div>
+
+        <!--EQUIPEMENT-->
+        <div class="col-" style='padding-bottom: 15px;'>
+          <div class="card hoverable marge" style="width: 20rem;" role="button" data-toggle="collapse"
+            data-target="#armes" aria-expanded="false" aria-controls="armes" (click)='isArme=1' (click)='GetAllArmes()'>
+            <div class='container'>
+              <img class="card-img-top" *ngIf="arme1" src={{arme1.image}}>
+              <img class="card-img-top" *ngIf="!arme1"
+                src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+            </div>
+          </div>
+          <div class='row'>
+            <div class="col">
+              <div class='overflow-auto thumbnail zoom ' style="max-height: 420px">
+                <div *ngIf="pouvoirList.length === 0" class="card hoverable2" style="width: 19rem;" role="button"
+                  data-toggle="collapse" data-target="#pouvoir" aria-expanded="false" aria-controls="pouvoir">
+                  <div class='container'>
+                    <img class="card-img-top"
+                      src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+                  </div>
+                </div>
+                <div *ngFor="let pouvoirL of pouvoirList" class="card " style="width: 19rem;" role="button"
+                  data-toggle="collapse" data-target="#pouvoir" aria-expanded="false" aria-controls="pouvoir">
+                  <div class='container'>
+                    <img class=" card-img-top " *ngIf="pouvoirL" src={{pouvoirL.image}}>
+                    <img class=" card-img-top " *ngIf="!pouvoirL"
+                      src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-" style='padding-bottom: 15px;'>
+          <div class="card hoverable marge" style="width: 20rem;" role="button" data-toggle="collapse"
+            data-target="#armes" aria-expanded="false" aria-controls="armes" (click)='isArme=2' (click)='GetAllArmes()'>
+            <div class='container'>
+              <img class="card-img-top" *ngIf="arme2" src={{arme2.image}}>
+              <img class="card-img-top" *ngIf="!arme2"
+                src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+            </div>
+          </div>
+          <div class='row'>
+            <div class="col">
+              <div class="card hoverable marge" style="width: 20rem;" role="button" data-toggle="collapse"
+                data-target="#bouclier" aria-expanded="false" aria-controls="bouclier" (click)='GetAllBouclier()'>
+                <div class='container'>
+                  <img class="card-img-top" *ngIf="bouclier" src={{bouclier.image}}>
+                  <img class="card-img-top" *ngIf="!bouclier"
+                    src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-" style='padding-bottom: 15px;'>
+          <div class="card hoverable marge" style="width: 20rem;" role="button" data-toggle="collapse"
+            data-target="#armures" aria-expanded="false" aria-controls="armes" (click)='GetAllArmues()'>
+            <div class='container'>
+              <img class="card-img-top" *ngIf="armure" src={{armure.image}}>
+              <img class="card-img-top" *ngIf="!armure"
+                src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+            </div>
+          </div>
+
+          <div class='row'>
+            <div class="col">
+              <div class='overflow-auto thumbnail zoom ' style="max-height: 420px">
+                <div *ngIf="modsList.length === 0" class="card hoverable2" style="width: 19rem;" role="button"
+                  data-toggle="collapse" data-target="#mod" aria-expanded="false" aria-controls="mod"
+                  (click)='GetAllMods()'>
+                  <div class='container'>
+                    <img class="card-img-top"
+                      src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+                  </div>
+                </div>
+                <div *ngFor="let modL of modsList" class="card " style="width: 19rem;" role="button"
+                  data-toggle="collapse" data-target="#mod" aria-expanded="false" aria-controls="mod"
+                  (click)='GetAllMods()'>
+                  <div class='container'>
+                    <img class=" card-img-top " *ngIf="modL" src={{modL.image}}>
+                    <img class=" card-img-top " *ngIf="!modL"
+                      src="https://d2homsd77vx6d2.cloudfront.net/cache/2/b/2b9a00341f47b7c6f45bdbdbaf241f12.jpg">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col d-flex justify-content-center">
+              <button type="button" class="btn btn-outline-primary d-flex justify-content-center" role="button"
+                data-toggle="collapse" data-target="#mod" aria-expanded="false" aria-controls="mod"
+                (click)='GetAllMods()'>Ajouter un <br> Mod</button>
+              <button type="button" class="btn btn-outline-danger d-flex justify-content-center" role="button"
+                data-toggle="collapse" data-target="#mod2" aria-expanded="false" aria-controls="mod2">Supprimer un
+                <br> Mod</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="armes">
+    <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+      <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
+    </button>
+    <app-armes (selectedArme)='getSelectedArme1($event)' [armesSources]='armesSources'></app-armes>
+  </div>
+  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="bouclier">
+    <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+      <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
+    </button>
+    <app-bouclier (selectedBouclier)='getSelectedBouclier($event)' [bouclierSource]='bouclierSources'></app-bouclier>
+  </div>
+  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="armures">
+    <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+      <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
+    </button>
+    <app-armures (selectedArmure)='getSelectedArmure($event)' [armuresSources]='armuresSources'></app-armures>
+  </div>
+
+  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="mod">
+    <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+      <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
+    </button>
+    <app-mods (selectedMod)='getSelectedMod($event)' [modsSources]='modsSources'></app-mods>
+  </div>
+
+  <div class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" id="mod2">
+    <button role="button" data-toggle="collapse" data-target="#feuil3" aria-expanded="false" aria-controls="feuil3">
+      <img src="https://i.ibb.co/CMV4hBj/collapse-expand-icon-29.png" style="width: 25px" style="height: 25px">
+    </button>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col d-flex justify-content-center">
+          <div *ngFor="let modL of modsList" class="card" style="width: 15rem;" data-toggle="collapse"
+            data-target="#feuil3" aria-expanded="false" aria-controls="feuil3" (click)="suppMods(modL)">
+            <img class="card-img-top" src={{modL.image}}>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<!--FIN-->
+
+
+
+
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active" role="button" data-toggle="collapse" data-target="#feuil1"
+        aria-expanded="true" aria-controls="feuil1">
+        <input type="radio" name="options" id="option1" autocomplete="off"> Page 1
+      </label>
+      <label class="btn btn-secondary active" role="button" data-toggle="collapse" data-target="#feuil3"
+        aria-expanded="false" aria-controls="feuil3">
+        <input type="radio" name="options" id="option3" autocomplete="off"> Page 2
+      </label>
+    </div>
+  </div>
+</div>

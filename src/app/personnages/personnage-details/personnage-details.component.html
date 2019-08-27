@@ -1,5 +1,5 @@
 
-   <a *ngIf="personnage" [routerLink]="['/personnages']" routerLinkActive="router-link-active">
+   <a *ngIf="personnage" [routerLink]="['/perso/'+ personnage.id]" routerLinkActive="router-link-active">
     <div>
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src={{personnage.image}}>

@@ -86,11 +86,27 @@ export class ElasticService {
     });
   }
 
-  createDoc(value):any{
+  getAllWithId(_index, id): any {
+    return this.client.search({
+      index: _index,
+      body: {
+        'query': {
+          'term': {
+            'id': {
+              'value': id
+            }
+          }
+        }
+      }
+    });
+  }
+
+
+  createDoc(value): any {
     return this.client.create(value);
   }
 
-  deleteDoc(value):any{
+  deleteDoc(value): any {
     return this.client.delete(value);
   }
 
