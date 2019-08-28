@@ -7,6 +7,7 @@ import { Bouclier, BouclierSource } from 'src/app/equipement/orest/bouclier.inte
 import { ElasticService } from 'src/app/shared/elastic.service';
 import { Pouvoir } from 'src/app/equipement/orest/pouvoir.interface';
 
+
 @Component({
   selector: 'app-affichage-perso-oreste',
   templateUrl: './affichage-perso-oreste.component.html',
@@ -37,107 +38,155 @@ export class AffichagePersoOresteComponent implements OnInit {
 
 
 
-getSelectedArme1(arme: Arme) {
-  if (this.isArme === 1) {
-    this.arme1 = arme;
+  getSelectedArme1(arme: Arme) {
+    if (this.isArme === 1) {
+      this.arme1 = arme;
+    }
+
+    if (this.isArme === 2) {
+      this.arme2 = arme;
+    }
+
   }
 
-  if (this.isArme === 2) {
-    this.arme2 = arme;
+  getSelectedArmure(armure: Armures) {
+    this.armure = armure;
   }
 
-}
-
-getSelectedArmure(armure: Armures) {
-  this.armure = armure;
-}
 
 
+  getSelectedMod(mod: Mods) {
+    this.mods = mod;
+    this.modsList.push(this.mods);
+  }
 
-getSelectedMod(mod: Mods) {
-  this.mods = mod;
-  this.modsList.push(this.mods);
-}
+  getSelectedBouclier(bouclier: Bouclier) {
+    this.bouclier = bouclier;
+  }
 
-getSelectedBouclier(bouclier: Bouclier) {
-  this.bouclier = bouclier;
-}
+  GetAllArmues() {
+    this.es.getByType('equipement-oreste', 'armures')
+      .then(response => {
+        this.armuresSources = response.hits.hits;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
+  }
 
-GetAllArmues() {
-  this.es.getByType('equipement-oreste', 'armures')
-    .then(response => {
-      this.armuresSources = response.hits.hits;
-      console.log(response);
-    }, error => {
-      console.log(error);
+  GetAllBouclier() {
+    this.es.getByType('equipement-oreste', 'bouclier')
+      .then(response => {
+        this.bouclierSources = response.hits.hits;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  GetAllMods() {
+    this.es.getByType('equipement-oreste', 'module')
+      .then(response => {
+        this.modsSources = response.hits.hits;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  GetAllArmes() {
+    this.es.getByType('equipement-oreste', 'armes')
+      .then(response => {
+        this.armesSources = response.hits.hits;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
+  }
+
+  suppMods(mod: Mods) {
+    const index: number = this.modsList.indexOf(mod);
+    this.modsList.splice(index, 1);
+  }
+
+  getArme1Perso() {
+    this.es.getById('equipement-oreste', this.personnage.armePrincipale)
+      .then(response => {
+        this.arme1 = response._source;
+        console.log(response);
+      });
+  }
+
+  getArme2perso() {
+    this.es.getById('equipement-oreste', this.personnage.armeSecondaire)
+      .then(response => {
+        this.arme2 = response._source;
+        console.log(response);
+      });
+  }
+
+  getArmurePerso() {
+    this.es.getById('equipement-oreste', this.personnage.armure)
+      .then(response => {
+        this.armure = response._source;
+        console.log(response);
+      });
+  }
+
+  getPouvoirPerso() {
+    this.personnage.pouvoirs.forEach(pouvoir => {
+      setTimeout(() => {
+        this.es.getById('equipement-oreste', pouvoir)
+          .then(response => {
+            this.pouvoir = response._source;
+            this.pouvoirList.push(this.pouvoir);
+            console.log(response);
+          });
+
+      }, 100);
+
     });
-}
+  }
 
-GetAllBouclier() {
-  this.es.getByType('equipement-oreste', 'bouclier')
-    .then(response => {
-      this.bouclierSources = response.hits.hits;
-      console.log(response);
-    }, error => {
-      console.log(error);
+  getBouclierPerso() {
+    this.es.getById('equipement-oreste', this.personnage.bouclierDeflecteur)
+      .then(response => {
+        this.bouclier = response._source;
+        console.log(response);
+      });
+  }
+
+
+
+  getModsPerso() {
+    this.personnage.modArmure.forEach(mods => {
+      setTimeout(() => {
+        this.es.getById('equipement-oreste', mods)
+        .then(response => {
+          this.mods = response._source;
+          this.modsList.push(this.mods);
+          console.log(response);
+        });
+      }, 100);
     });
-}
-
-GetAllMods() {
-  this.es.getByType('equipement-oreste', 'module')
-    .then(response => {
-      this.modsSources = response.hits.hits;
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
-}
-
-GetAllArmes(){
-  this.es.getByType('equipement-oreste', 'armes')
-  .then(response => {
-    this.armesSources = response.hits.hits;
-    console.log(response);
-  }, error => {
-    console.log(error);
-  });
-}
-
-suppMods(mod: Mods) {
-  const index: number = this.modsList.indexOf(mod);
-  this.modsList.splice(index, 1);
-}
-
-GetAllResources(){
- this.es.getById('equipement-oreste',this.personnage.armePrincipale)
- .then(response => {
-   this.arme1 = response._source;
-   console.log(response);
- });
+  }
 
 
- this.es.getById('equipement-oreste',this.personnage.armeSecondaire)
- .then(response => {
-   this.arme2 = response._source;
-   console.log(response);
- });
+  getRessources() {
+    setTimeout(() => { this.getArme1Perso(); }, 0);
+    setTimeout(() => { this.getArme2perso(); }, 100);
+    setTimeout(() => { this.getArmurePerso(); }, 200);
+    setTimeout(() => { this.getPouvoirPerso(); }, 300);
+    setTimeout(() => { this.getModsPerso(); }, 400);
+    setTimeout(() => { this.getBouclierPerso(); }, 500);
+  }
 
- this.es.getById('equipement-oreste',this.personnage.armure)
- .then(response => {
-  this.armure = response._source;
-  console.log(response);
- });
-
- this.personnage.pouvoirs.forEach(pouvoir => {
-   this.es.getById('equipement-oreste', pouvoir)
-   .then(response =>{
-     this.pouvoir = response._source;
-     this.pouvoirList.push(this.pouvoir);
-     console.log(response);
-   });
- });
-}
 
 
 }
+
+
+
+
+
 
