@@ -10,8 +10,8 @@ export class ElasticService {
   private client: Client;
 
   private queryalldocs = {
-    'query': {
-      'match_all': {}
+    query: {
+      match_all: {}
     }
   };
 
@@ -60,10 +60,10 @@ export class ElasticService {
     return this.client.search({
       index: _index,
       body: {
-        'query': {
-          'term': {
-            'joueur': {
-              'value': param
+        query: {
+          term: {
+            joueur: {
+              value: param
             }
           }
         }
@@ -75,10 +75,10 @@ export class ElasticService {
     return this.client.search({
       index: _index,
       body: {
-        'query': {
-          'term': {
-            'type': {
-              'value': param
+        query: {
+          term: {
+            type: {
+              value: param
             }
           }
         }
@@ -90,15 +90,22 @@ export class ElasticService {
     return this.client.search({
       index: _index,
       body: {
-        'query': {
-          'term': {
-            'id': {
-              'value': id
+        query: {
+          term: {
+            id: {
+              value: id
             }
           }
         }
       }
     });
+  }
+
+  getById(index, id): any {
+    return this.client.get({
+      id,
+      index,
+      type: '_doc'    });
   }
 
 

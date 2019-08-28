@@ -23,6 +23,7 @@ export class AffichagePersoOresteComponent implements OnInit {
   mods: Mods;
   modsList: Mods[] = [];
   pouvoirList: Pouvoir[] = [];
+  pouvoir: Pouvoir;
   bouclier: Bouclier;
   armuresSources: ArmureSource[];
   bouclierSources: BouclierSource[];
@@ -106,6 +107,37 @@ suppMods(mod: Mods) {
   const index: number = this.modsList.indexOf(mod);
   this.modsList.splice(index, 1);
 }
+
+GetAllResources(){
+ this.es.getById('equipement-oreste',this.personnage.armePrincipale)
+ .then(response => {
+   this.arme1 = response._source;
+   console.log(response);
+ });
+
+
+ this.es.getById('equipement-oreste',this.personnage.armeSecondaire)
+ .then(response => {
+   this.arme2 = response._source;
+   console.log(response);
+ });
+
+ this.es.getById('equipement-oreste',this.personnage.armure)
+ .then(response => {
+  this.armure = response._source;
+  console.log(response);
+ });
+
+ this.personnage.pouvoirs.forEach(pouvoir => {
+   this.es.getById('equipement-oreste', pouvoir)
+   .then(response =>{
+     this.pouvoir = response._source;
+     this.pouvoirList.push(this.pouvoir);
+     console.log(response);
+   });
+ });
+}
+
 
 }
 
