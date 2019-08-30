@@ -37,6 +37,7 @@ export class AffichagePersoOresteComponent implements OnInit {
   }
 
 
+ 
 
   getSelectedArme1(arme: Arme) {
     if (this.isArme === 1) {

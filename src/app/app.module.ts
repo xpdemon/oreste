@@ -32,6 +32,8 @@ import { ModsDetailComponent } from './equipement/orest/mods-detail/mods-detail.
 import { BouclierComponent } from './equipement/orest/bouclier/bouclier.component';
 import { BouclierDetailComponent } from './equipement/orest/bouclier-detail/bouclier-detail.component';
 import { AffichagePersoOresteComponent } from './personnages/affichage-perso-oreste/affichage-perso-oreste.component';
+import { InventaireComponent } from './personnages/inventaire/inventaire.component';
+import { InventaireDetailComponent } from './personnages/inventaire-detail/inventaire-detail.component';
 
 
 
@@ -61,7 +63,9 @@ import { AffichagePersoOresteComponent } from './personnages/affichage-perso-ore
     ModsDetailComponent,
     BouclierComponent,
     BouclierDetailComponent,
-    AffichagePersoOresteComponent
+    AffichagePersoOresteComponent,
+    InventaireComponent,
+    InventaireDetailComponent
   ],
   imports: [
     HttpClientModule,

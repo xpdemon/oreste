@@ -1,0 +1,12 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)='closeNav()'>&times;</a>
+  <div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action active">
+      Inventaire
+    </button>
+    <button *ngFor='let objet of inventaire.objet' type="button" class="list-group-item list-group-item-action">{{objet}}
+    </button>
+    <button  type="button" class="list-group-item list-group-item-action">{{inventaire.argent}} Vallons</button>
+  </div>
+</div>
+<span style="font-size:30px;cursor:pointer" (click)='openNav()'>&#9776; Inventaire</span>

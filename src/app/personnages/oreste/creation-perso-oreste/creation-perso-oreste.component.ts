@@ -261,10 +261,29 @@ export class CreationPersoOresteComponent implements OnInit {
       }, error => {
         console.error(error);
       });
+      setTimeout(() => {
+        this.CreateInventaire(value);
+      }, 100);
 
     }
   }
 
+  CreateInventaire(value) {
+    this.es.createDoc({
+      index: 'inventaire',
+      id: localStorage.getItem('current_Game') +  localStorage.getItem('current_player') + value.nom,
+      body: {
+        personnage: localStorage.getItem('current_Game') +  localStorage.getItem('current_player') + value.nom,
+        objet: '',
+        argent: 0,
+      }
+    }).then((result) => {
+      console.log(result);
+      window.location.reload();
+    }, error => {
+      console.error(error);
+    });
+  }
 
 
 }
