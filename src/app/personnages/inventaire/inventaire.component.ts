@@ -1,5 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Inventaire } from '../inventaire.interface';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-inventaire',
@@ -10,16 +11,24 @@ export class InventaireComponent implements OnInit {
 
   @Input() inventaire: Inventaire;
   @Input() id: string;
+  vallonForm: FormGroup;
 
-  constructor() { }
+  constructor() {
+    this.vallonForm = new FormGroup({
+      vallon: new FormControl('', Validators.required)
+    });
+  }
 
   ngOnInit() {
+
   }
 
   openNav() {
-    document.getElementById('mySidenav').style.width = '250px';}
+    document.getElementById('mySidenav').style.width = '250px';
+  }
 
-    closeNav() {
-      document.getElementById('mySidenav').style.width = '0';}
+  closeNav() {
+    document.getElementById('mySidenav').style.width = '0';
+  }
 
 }

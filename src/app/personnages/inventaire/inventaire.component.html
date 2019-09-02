@@ -1,12 +1,50 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)='closeNav()'>&times;</a>
   <div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action active">
+    <button type="button" class="list-group-item list-group-item active">
       Inventaire
     </button>
-    <button *ngFor='let objet of inventaire.objet' type="button" class="list-group-item list-group-item-action">{{objet}}
-    </button>
-    <button  type="button" class="list-group-item list-group-item-action">{{inventaire.argent}} Vallons</button>
+    <div class="row" *ngFor='let objet of inventaire.objet'>
+      <div class="col">
+
+        <div class="list-group-item list-group-item ">
+            <div class="row ">
+          <div class="col col-lg">
+            <label>{{objet}}</label>
+          </div>
+          <div class="col-sm-auto justify-content-right">
+            <button class="btn btn-primary" type="button" style="height: 30px" style="width: 30px">-</button>
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
+  <div class="row d-flex text-center" style="padding-top: 30px">
+    <div class="col">
+      <label> {{inventaire.argent}} Vallons </label>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+
+    <form [formGroup]="vallonForm">
+
+      <div class="input-group">
+        <div class="col-">
+          <input type="number" id="inputGroupFile04" formControlName="vallon">
+        </div>
+        <div class="col-">
+          <button class="btn btn-primary" type="button" style="height: 30px">Modifier</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
 </div>
+
+
+
 <span style="font-size:30px;cursor:pointer" (click)='openNav()'>&#9776; Inventaire</span>

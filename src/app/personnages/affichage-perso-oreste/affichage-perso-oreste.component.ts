@@ -6,6 +6,7 @@ import { Mods, ModsSources } from 'src/app/equipement/orest/mods.interface';
 import { Bouclier, BouclierSource } from 'src/app/equipement/orest/bouclier.interface';
 import { ElasticService } from 'src/app/shared/elastic.service';
 import { Pouvoir } from 'src/app/equipement/orest/pouvoir.interface';
+import { Inventaire } from '../inventaire.interface';
 
 
 @Component({
@@ -30,14 +31,15 @@ export class AffichagePersoOresteComponent implements OnInit {
   bouclierSources: BouclierSource[];
   modsSources: ModsSources[];
   armesSources: ArmeSource[];
+  inventaire: Inventaire;
 
   constructor(private es: ElasticService) { }
 
   ngOnInit() {
-  }
-
-
- 
+    setTimeout(() => {
+      this.getIventaire();
+    }, 50);
+    }
 
   getSelectedArme1(arme: Arme) {
     if (this.isArme === 1) {
@@ -170,6 +172,14 @@ export class AffichagePersoOresteComponent implements OnInit {
         });
       }, 100);
     });
+  }
+
+  getIventaire(){
+    this.es.getById('inventaire', this.personnage.id)
+      .then(response => {
+        this.inventaire = response._source;
+        console.log(response);
+      });
   }
 
 
