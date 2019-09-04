@@ -12,10 +12,14 @@ export class InventaireComponent implements OnInit {
   @Input() inventaire: Inventaire;
   @Input() id: string;
   vallonForm: FormGroup;
+  objetForm: FormGroup;
 
   constructor() {
     this.vallonForm = new FormGroup({
       vallon: new FormControl('', Validators.required)
+    });
+    this.objetForm = new FormGroup({
+      item: new FormControl('', Validators.required)
     });
   }
 
@@ -25,10 +29,25 @@ export class InventaireComponent implements OnInit {
 
   openNav() {
     document.getElementById('mySidenav').style.width = '250px';
+    document.getElementById('burger').style.visibility = 'hidden';
   }
 
   closeNav() {
     document.getElementById('mySidenav').style.width = '0';
+    document.getElementById('burger').style.visibility = 'visible';
+  }
+
+  changeVallon(value) {
+    this.inventaire.argent = this.inventaire.argent + value.vallon;
+  }
+
+  suppItem(index) {
+    this.inventaire.objet.splice(index, 1);
+
+  }
+
+  addItem(value) {
+    this.inventaire.objet.push(value.item);
   }
 
 }

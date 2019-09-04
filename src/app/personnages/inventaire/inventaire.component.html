@@ -1,3 +1,4 @@
+<button type="button" class="btn btn-outline-secondary" id="burger"  (click)='openNav()'>&#9776; Inventaire</button>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)='closeNav()'>&times;</a>
   <div class="list-group">
@@ -8,14 +9,15 @@
       <div class="col">
 
         <div class="list-group-item list-group-item ">
-            <div class="row ">
-          <div class="col col-lg">
-            <label>{{objet}}</label>
+          <div class="row ">
+            <div class="col col-lg">
+              <label>{{objet}}</label>
+            </div>
+            <div class="col-sm-auto justify-content-right">
+              <button class="btn btn-primary" type="button" style="height: 30px" style="width: 30px"
+                (click)="suppItem(objet)">-</button>
+            </div>
           </div>
-          <div class="col-sm-auto justify-content-right">
-            <button class="btn btn-primary" type="button" style="height: 30px" style="width: 30px">-</button>
-          </div>
-        </div>
         </div>
 
       </div>
@@ -28,16 +30,30 @@
     </div>
   </div>
 
-  <div class="row d-flex justify-content-center">
-
+  <div class="row d-flex justify-content-center" style="padding-top: 30px">
     <form [formGroup]="vallonForm">
-
       <div class="input-group">
         <div class="col-">
-          <input type="number" id="inputGroupFile04" formControlName="vallon">
+          <input type="number" name="vallonValue" placeholder="Vallons" id="inputGroupFile04" formControlName="vallon">
         </div>
+        <div class="col- " id="ob">
+          <button class="btn btn-primary text-center" type="reset" style="height: 30px"
+            (click)="changeVallon(vallonForm.value)">add</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row d-flex justify-content-center " style="padding-top: 30px">
+    <form [formGroup]="objetForm">
+      <div class="input-group">
         <div class="col-">
-          <button class="btn btn-primary" type="button" style="height: 30px">Modifier</button>
+          <input type="text" placeholder="Ajouter un objet" id="inputGroupFile04" formControlName="item">
+        </div>
+        <div class="col-" id="ob">
+          <button class="btn btn-primary" type="reset" style="height: 30px" (click)="addItem(objetForm.value)"> add
+
+          </button>
         </div>
       </div>
     </form>
@@ -47,4 +63,4 @@
 
 
 
-<span style="font-size:30px;cursor:pointer" (click)='openNav()'>&#9776; Inventaire</span>
+
