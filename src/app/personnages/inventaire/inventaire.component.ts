@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Inventaire } from '../inventaire.interface';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ElasticService } from 'src/app/shared/elastic.service';
 
 @Component({
   selector: 'app-inventaire',
@@ -14,7 +15,7 @@ export class InventaireComponent implements OnInit {
   vallonForm: FormGroup;
   objetForm: FormGroup;
 
-  constructor() {
+  constructor(private es: ElasticService) {
     this.vallonForm = new FormGroup({
       vallon: new FormControl('', Validators.required)
     });
@@ -39,15 +40,28 @@ export class InventaireComponent implements OnInit {
 
   changeVallon(value) {
     this.inventaire.argent = this.inventaire.argent + value.vallon;
+    this.updateInventaire();
   }
 
   suppItem(index) {
     this.inventaire.objet.splice(index, 1);
-
+    this.updateInventaire();
   }
 
   addItem(value) {
     this.inventaire.objet.push(value.item);
+    this.updateInventaire();
+  }
+
+  updateInventaire() {
+    this.es.createDoc({
+      index: 'invetaire',
+      id: this.inventaire.id,
+      objet: this.inventaire.objet,
+      argent: this.inventaire.argent
+    }).then((result) => {
+      console.log(result);
+    }, error => { console.log(error); });
   }
 
 }
