@@ -1,5 +1,9 @@
-| One    |  Two | Three | Four    | Five  | Six 
-| -
-| Span <td rowspan=3>triple  <td colspan=2>double
-|TDV1
-|TDV2
+
+First Header  | Second Header | Third Header |
+ ------------ | :-----------: | -----------: |
+Content       |          *Long Cell*        ||
+Content       |   **Cell**    |         Cell |
+
+New section   |     More      |         Data |
+And more      | With an escaped '\|'         ||  
+[Prototype table]
